@@ -1,0 +1,153 @@
+:root {
+    --clr-primary-400: hsl(179, 62%, 43%);
+    --clr-primary-500: hsl(71, 73%, 54%);
+    --clr-neutral-400: hsl(204, 43%, 93%);
+    --clr-neutral-500: hsl(218, 22%, 67%);
+    --clr-white: hsl(360, 100%, 100%);
+
+    font-family: 'Karla', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--clr-neutral-400);
+    color: var(--clr-neutral-500);
+    font-size: .88rem;
+    font-weight: 400;
+}
+
+/* Utility Classes */
+
+.wrapper {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 2rem;
+}
+
+.price__card {
+    background-color: var(--clr-white);
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 2rem -1rem hsla(0, 0%, 0%, .3);
+    max-width: 40rem;
+    overflow: hidden;
+}
+
+.box {
+    padding: 2rem 1.5rem;
+}
+
+.join__heading {
+    color: var(--clr-primary-400);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.join__subheading {
+    color: var(--clr-primary-500);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.join__text {
+    line-height: 1.8;
+}
+
+.subscript__box {
+    background-color: var(--clr-primary-400);
+    color: var(--clr-white);
+}
+
+.subscript__heading, .whyus__heading {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.subscript__price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.subscript__round {
+    color: hsla(360, 100%, 100%, .7);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.subscript__text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.subscript__btn {
+    display: block;
+    color: var(--clr-white);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: .3rem;
+    box-shadow: 0 .5rem 2rem -1rem hsla(0, 0%, 0%, .3);
+    background-color: var(--clr-primary-500);
+    padding: .9em;
+}
+
+.whyus__box {
+    background-color: hsla(179, 62%, 43%, .75);
+    color: var(--clr-white);
+}
+
+.whyus__list {
+    list-style: none;
+    line-height: 1.5;
+}
+
+@media (min-width: 40rem) {
+
+    .price__card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "join join"
+        "subs why";
+    }
+
+    .box {
+        padding: 2.5rem;
+    }
+
+    .join__box {
+        grid-area: join;
+    }
+
+    .subscript__box {
+        grid-area: subs;
+    }
+
+    .whyus__box {
+        grid-area: why;
+    }
+
+    .join__heading {
+        font-size: 1.5rem;
+    }
+    
+    .join__subheading {
+        font-size: 1.2rem;
+        margin-bottom: .6rem;
+    }
+
+    .join__text {
+        font-size: 1rem;
+    }
+}
